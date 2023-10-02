@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{ book.title }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h4>{{ book.author }}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>{{ book.genre }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <img [src]="book.coverImagePath" [alt]="book.title" class="img-responsive" style="max-height: 500px;">
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <small>Tags</small>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-success">Edit Book</button>
+  </div>
+</div>
