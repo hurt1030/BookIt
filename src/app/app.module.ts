@@ -7,6 +7,9 @@ import { BookshelfComponent } from './bookshelf/bookshelf.component';
 import { BookListComponent } from './bookshelf/book-list/book-list.component';
 import { BookDetailsComponent } from './bookshelf/book-details/book-details.component';
 import { BookComponent } from './shared/book/book.component';
+import { BookResultsComponent } from './library/book-results/book-results.component';
+import { BookSearchComponent } from './library/book-search/book-search.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { BookComponent } from './shared/book/book.component';
     BookshelfComponent,
     BookListComponent,
     BookDetailsComponent,
-    BookComponent
+    BookComponent,
+    BookResultsComponent,
+    BookSearchComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule
