@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Book } from '../shared/book/book.model';
 
 @Component({
   selector: 'app-bookshelf',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./bookshelf.component.css']
 })
 export class BookshelfComponent {
+  @Input() selectedBook: Book;
 
 }

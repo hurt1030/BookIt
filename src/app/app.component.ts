@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Book } from './shared/book/book.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BookIt';
+  pageDisplayed = "bookshelf"
+  selectedBook: Book;
+
+  onNavigatePage(page: string) {
+      // console.log("APP COMP:", page)
+      this.pageDisplayed = page;
+  }
+  
 }
