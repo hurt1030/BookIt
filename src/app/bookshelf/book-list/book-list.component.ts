@@ -11,22 +11,28 @@ export class BookListComponent {
 
   books: Book[] = [
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+        'Book of Testing',
+        'Will Wilder',
+        'Mystery',
+        'https://source.unsplash.com/50x50/?mystery,book'
     ),
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+        'Testing Title 2',
+        'Nolan Hovis',
+        'Science',
+        'https://source.unsplash.com/50x50/?science,book'
     ),
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+        'Fantasy Test',
+        'German Cruz',
+        'Non-Fiction',
+        'https://source.unsplash.com/50x50/?fantasy,book'
+    ),
+    new Book(
+        'Fantasy Test',
+        'Lex Pryor',
+        'Math',
+        'https://source.unsplash.com/50x50/?math,book'
     ),
   ];
 

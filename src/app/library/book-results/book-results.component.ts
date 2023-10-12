@@ -9,22 +9,28 @@ import { Book } from 'src/app/shared/book/book.model';
 export class BookResultsComponent {
   allBooks: Book[] = [
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+      "API Book 1",
+      "Will Wilder",
+      "Mystery",
+      "https://source.unsplash.com/50x50/?mystery,book"
     ),
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+      "API Book 2",
+      "Nolan Hovis",
+      "Non-Fiction",
+      "https://source.unsplash.com/50x50/?serious,book"
     ),
     new Book(
-      'The Princess Bride',
-      'William Goldman',
-      'Fantasy',
-      'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg'
+      "API Book 3",
+      "German Cruz",
+      "Mystery",
+      "https://source.unsplash.com/50x50/?mystery,book"
     ),
+    new Book(
+      "API Book 4",
+      "Lex Pryor",
+      "Non-Fiction",
+      "https://source.unsplash.com/50x50/?serious,book"
+    )
   ];
 }
