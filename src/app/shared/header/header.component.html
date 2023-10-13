@@ -31,7 +31,7 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
+      <li appDropdown class="nav-item dropdown show">
         <a
           class="nav-link dropdown-toggle"
           href="#"
@@ -39,14 +39,12 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-          (click)="toggleDropdown()"
         >
           Settings
         </a>
         <div
           class="dropdown-menu"
           aria-labelledby="navbarDropdownMenuLink"
-          [ngClass]="{ show: show }"
         >
           <a class="dropdown-item" href="#">Save Data</a>
           <a class="dropdown-item" href="#">Fetch Data</a>

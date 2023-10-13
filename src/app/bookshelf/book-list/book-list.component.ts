@@ -1,43 +1,23 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
+import { BookshelfService } from '../bookshelf.service';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
+  styleUrls: ['./book-list.component.css']
 })
-export class BookListComponent {
-  @Output() currentSelectedBook = new EventEmitter<Book>();
+export class BookListComponent implements OnInit {
+  books: Book[];
 
-  books: Book[] = [
-    new Book(
-        'Book of Testing',
-        'Will Wilder',
-        'Mystery',
-        'https://source.unsplash.com/50x50/?mystery,book'
-    ),
-    new Book(
-        'Testing Title 2',
-        'Nolan Hovis',
-        'Science',
-        'https://source.unsplash.com/50x50/?science,book'
-    ),
-    new Book(
-        'Fantasy Test',
-        'German Cruz',
-        'Non-Fiction',
-        'https://source.unsplash.com/50x50/?fantasy,book'
-    ),
-    new Book(
-        'Fantasy Test',
-        'Lex Pryor',
-        'Math',
-        'https://source.unsplash.com/50x50/?math,book'
-    ),
-  ];
+  constructor(private bookshelfService: BookshelfService) {}
 
-  handleBookSelected(book: Book) {
-    // console.log('BOOK:', book);
-    this.currentSelectedBook.emit(book);
+  ngOnInit(): void {
+    this.books = this.bookshelfService.getBooks();
+    this.bookshelfService.bookListChanged.subscribe((books) => this.books = books);
+  }
+
+  removeBook(id: number) {
+    this.bookshelfService.removeBook(id);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from './book.model';
+import { BookshelfService } from 'src/app/bookshelf/bookshelf.service';
 
 @Component({
   selector: 'app-book',
@@ -8,11 +9,11 @@ import { Book } from './book.model';
 })
 export class BookComponent {
   @Input() book: Book;
-  @Output() bookSelected = new EventEmitter<void>();
 
+  constructor(private bookshelfService: BookshelfService) {}
 
   onBookSelected() {
     // Tell App that someone clicked on a book!
-    this.bookSelected.emit();
-}
+    this.bookshelfService.selectBook(this.book);
+  }
 }
