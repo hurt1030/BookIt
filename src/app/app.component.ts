@@ -7,12 +7,5 @@ import { Book } from './shared/book/book.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pageDisplayed = "bookshelf"
   selectedBook: Book;
-
-  onNavigatePage(page: string) {
-      // console.log("APP COMP:", page)
-      this.pageDisplayed = page;
-  }
-  
 }

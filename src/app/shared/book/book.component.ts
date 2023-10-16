@@ -9,6 +9,7 @@ import { BookshelfService } from 'src/app/bookshelf/bookshelf.service';
 })
 export class BookComponent {
   @Input() book: Book;
+  @Input() id: number;
 
   constructor(private bookshelfService: BookshelfService) {}
 

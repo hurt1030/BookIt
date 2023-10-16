@@ -36,6 +36,10 @@ export class BookshelfService {
     return [...this.books];
   }
 
+  getBook(id: number) {
+    return this.books[id];
+  }
+
   selectBook(book: Book) {
     this.bookSelected.emit(book);
   }
