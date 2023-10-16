@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
 import { BookshelfService } from '../bookshelf.service';
 import { ActivatedRoute } from '@angular/router';
