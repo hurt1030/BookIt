@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
 import { BookshelfService } from '../bookshelf.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +11,7 @@ import { BookshelfService } from '../bookshelf.service';
 export class BookListComponent implements OnInit {
   books: Book[];
 
-  constructor(private bookshelfService: BookshelfService) {}
+  constructor(private bookshelfService: BookshelfService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.books = this.bookshelfService.getBooks();
@@ -19,5 +20,9 @@ export class BookListComponent implements OnInit {
 
   removeBook(id: number) {
     this.bookshelfService.removeBook(id);
+  }
+
+  onAddBook() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }

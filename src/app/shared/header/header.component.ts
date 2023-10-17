@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  @Output() currentPage = new EventEmitter<string>();
 
   toggleCollapse() {
     this.collapsed = !this.collapsed;
-  }
-
-  onSelectPage(page: string) {
-    // Page Change Logic - Pass Page to Parent
-    // console.log("NAV:", page);
-    this.currentPage.emit(page);
   }
 }
