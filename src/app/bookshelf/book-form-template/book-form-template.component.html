@@ -1,0 +1,53 @@
+<form #bookForm="ngForm" (ngSubmit)="onFormSubmitted(bookForm)">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control"
+           type="text"
+           id="title"
+           name="title"
+           ngModel
+           required
+           #titleInput="ngModel"
+    >
+    <span class="help-block text-danger" *ngIf="titleInput.touched && !titleInput.valid">Please enter a valid title.</span>
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input class="form-control"
+           type="text"
+           id="author"
+           name="author"
+           ngModel
+           required
+           #authorInput="ngModel"
+    >
+    <span class="help-block text-danger" *ngIf="authorInput.touched && !authorInput.valid">Please enter a valid author.</span>
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <select name="genre"
+            id="genre"
+            class="form-control"
+            [ngModel]="'mystery'"
+            required
+            #genreInput="ngModel"
+    >
+      <option value="mystery">Mystery</option>
+      <option value="romance">Romance</option>
+      <option value="scifi">Sci-Fi</option>
+    </select>
+    <span class="help-block text-danger" *ngIf="genreInput.touched && !genreInput.valid">Please select a genre.</span>
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!bookForm.valid">Submit</button>
+</form>
+
+<hr>
+
+<div class="row" *ngIf="formSubmitted">
+  <div class="col-md-12">
+    <p>Title: {{ book.title }}</p>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+  </div>
+</div>

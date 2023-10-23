@@ -15,6 +15,9 @@ import { BookshelfService } from './bookshelf/bookshelf.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edit.component';
+import { BookFormTemplateComponent } from './bookshelf/book-form-template/book-form-template.component';
+import { BookFormReactiveComponent } from './bookshelf/book-form-reactive/book-form-reactive.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,11 +32,15 @@ import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edi
     LibraryComponent,
     DropdownDirective,
     BookshelfHomeComponent,
-    BookshelfEditComponent
+    BookshelfEditComponent,
+    BookFormTemplateComponent,
+    BookFormReactiveComponent
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
