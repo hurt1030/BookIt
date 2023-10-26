@@ -1,35 +1,35 @@
-import { EventEmitter, Injectable } from "@angular/core";
-import { Book } from "../shared/book/book.model";
-import { Subject } from "rxjs";
+import { EventEmitter, Injectable } from '@angular/core';
+import { Book } from '../shared/book/book.model';
+import { Subject } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class BookshelfService {
   bookSelected = new Subject<Book>();
   bookListChanged = new Subject<Book[]>();
   private books: Book[] = [
     new Book(
-        'Book of Testing',
-        'Will Wilder',
-        'Mystery',
-        'https://source.unsplash.com/50x50/?mystery,book'
+      'Book of Testing',
+      'Will Wilder',
+      'Mystery',
+      'https://source.unsplash.com/50x50/?mystery,book'
     ),
     new Book(
-        'Testing Title 2',
-        'Nolan Hovis',
-        'Science',
-        'https://source.unsplash.com/50x50/?science,book'
+      'Testing Title 2',
+      'Nolan Hovis',
+      'Science',
+      'https://source.unsplash.com/50x50/?science,book'
     ),
     new Book(
-        'Fantasy Test',
-        'German Cruz',
-        'Non-Fiction',
-        'https://source.unsplash.com/50x50/?fantasy,book'
+      'Fantasy Test',
+      'German Cruz',
+      'Non-Fiction',
+      'https://source.unsplash.com/50x50/?fantasy,book'
     ),
     new Book(
-        'Fantasy Test',
-        'Lex Pryor',
-        'Math',
-        'https://source.unsplash.com/50x50/?math,book'
+      'Fantasy Test',
+      'Lex Pryor',
+      'Math',
+      'https://source.unsplash.com/50x50/?math,book'
     ),
   ];
 
@@ -52,6 +52,14 @@ export class BookshelfService {
 
   saveBook(book: Book) {
     this.books.push(book);
+    this.bookListChanged.next(this.getBooks());
+  }
+
+  updateBook(index: number, updatedBook) {
+    // step 1: update book
+    this.books[index] = updatedBook;
+
+    // step 2: alert subscribers of change 
     this.bookListChanged.next(this.getBooks());
   }
 }

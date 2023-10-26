@@ -1,5 +1,5 @@
 <div class="row mb-3">
-  <div class="col-md-12 mb-3" *ngFor="let book of books; let i = index;">
+  <div class="col-md-12 mb-3" *ngFor="let book of books | sortBooks: 'author'; let i = index;">
     <app-book [book]="book" [id]="i"></app-book>
     <button (click)="removeBook(i)" class="float-right" style="border: none; font-size: 16">&minus;</button>
   </div>

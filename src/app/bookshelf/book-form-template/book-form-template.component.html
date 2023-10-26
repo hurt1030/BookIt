@@ -1,11 +1,11 @@
-<form #bookForm="ngForm" (ngSubmit)="onFormSubmitted(bookForm)">
+<!-- <form #bookForm="ngForm" (ngSubmit)="onFormSubmitted(bookForm)">
   <div class="form-group">
     <label for="title">Title</label>
     <input class="form-control"
            type="text"
            id="title"
            name="title"
-           ngModel
+           [(ngModel)]="book.title"
            required
            #titleInput="ngModel"
     >
@@ -50,4 +50,4 @@
     <p>Author: {{ book.author }}</p>
     <p>Genre: {{ book.genre }}</p>
   </div>
-</div>
+</div> -->

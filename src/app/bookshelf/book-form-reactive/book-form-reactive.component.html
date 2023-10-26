@@ -1,45 +1,62 @@
 <form [formGroup]="bookForm" (ngSubmit)="onFormSubmitted()">
-  <div formGroupName="coreInfo">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input class="form-control"
-             type="text"
-             id="title"
-             name="title"
-             formControlName="title"
-      >
-      <span class="help-block text-danger" *ngIf="bookForm.get('coreInfo.title').touched && !bookForm.get('coreInfo.title').valid">Please enter a valid title.</span>
-    </div>
-    <div class="form-group">
-      <label for="author">Author</label>
-      <input class="form-control"
-             type="text"
-             id="author"
-             name="author"
-             formControlName="author"
-      >
-      <span class="help-block text-danger" *ngIf="bookForm.get('coreInfo.author').touched && !bookForm.get('coreInfo.author').valid">Please enter a valid author.</span>
-    </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      class="form-control"
+      type="text"
+      id="title"
+      name="title"
+      formControlName="title"
+      required
+    />
+    <span
+      class="help-block text-danger"
+      *ngIf="bookForm.get('title').touched && !bookForm.get('title').valid"
+      >Please enter a valid title.</span
+    >
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input
+      class="form-control"
+      type="text"
+      id="author"
+      name="author"
+      formControlName="author"
+      required
+    />
+    <span
+      class="help-block text-danger"
+      *ngIf="bookForm.get('author').touched && !bookForm.get('author').valid"
+      >Please enter a valid author.</span
+    >
   </div>
 
   <div class="form-group">
     <label for="genre">Genre</label>
-    <select name="genre"
-            id="genre"
-            class="form-control"
-            formControlName="genre"
+    <select
+      name="genre"
+      id="genre"
+      class="form-control"
+      formControlName="genre"
     >
       <option value="mystery">Mystery</option>
       <option value="romance">Romance</option>
       <option value="scifi">Sci-Fi</option>
     </select>
-    <span class="help-block text-danger" *ngIf="bookForm.get('genre').touched && !bookForm.get('genre').valid">Please select a genre.</span>
+    <span
+      class="help-block text-danger"
+      *ngIf="bookForm.get('genre').touched && !bookForm.get('genre').valid"
+      >Please select a genre.</span
+    >
   </div>
 
-  <button class="btn btn-primary" type="submit" [disabled]="!bookForm.valid">Submit</button>
+  <button class="btn btn-primary" type="submit" [disabled]="!bookForm.valid">
+    Submit
+  </button>
 </form>
 
-<hr>
+<hr />
 
 <div class="row" *ngIf="formSubmitted">
   <div class="col-md-12">

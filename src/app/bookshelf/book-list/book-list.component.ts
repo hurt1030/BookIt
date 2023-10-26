@@ -19,6 +19,7 @@ export class BookListComponent implements OnInit {
   }
 
   removeBook(id: number) {
+    console.log(this.books);
     this.bookshelfService.removeBook(id);
   }
 

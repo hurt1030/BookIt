@@ -7,22 +7,5 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./book-form-template.component.css']
 })
 export class BookFormTemplateComponent {
-  formSubmitted = false;
-  book = {
-    title: '',
-    author: '',
-    genre: 'mystery'
-  }
-
-  onFormSubmitted(form: NgForm) {
-    this.formSubmitted = true;
-    this.book = {...form.value};
-
-    form.reset({
-      title: '',
-      author: '',
-      genre: 'mystery'
-    });
-  }
-
+ 
 }
