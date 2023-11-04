@@ -19,6 +19,7 @@ import { BookFormTemplateComponent } from './bookshelf/book-form-template/book-f
 import { BookFormReactiveComponent } from './bookshelf/book-form-reactive/book-form-reactive.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SortBooksPipe } from './shared/pipes/sort-books.pipe';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SortBooksPipe } from './shared/pipes/sort-books.pipe';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
