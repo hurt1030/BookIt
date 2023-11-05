@@ -1,1 +1,24 @@
-<p>book-search works!</p>
+<form
+  #searchForm="ngForm"
+  (ngSubmit)="onFetchBooks(searchForm.value.search)"
+  class="form-inline"
+>
+  <div class="form-group mr-2">
+    <!-- SEARCH -->
+    <label for="search" class="sr-only">Search</label>
+    <input
+      type="search"
+      class="form-control"
+      name="search"
+      id="search"
+      placeholder="Search"
+      [(ngModel)]="searchForm.value.search"
+      required
+    />
+  </div>
+
+  <!-- SUBMIT -->
+  <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid">
+    Search
+  </button>
+</form>
