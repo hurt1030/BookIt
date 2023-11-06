@@ -9,15 +9,23 @@ import { BookshelfService } from 'src/app/bookshelf/bookshelf.service';
   styleUrls: ['./book-results.component.css'],
 })
 export class BookResultsComponent implements OnInit {
-  allBooks: Book[];
 
-  constructor(private libraryService: LibraryService, private bookshelfService: BookshelfService) {}
+  bookResults: Book[] = [];
+
+  constructor(
+    public libraryService: LibraryService,
+    private bookshelfService: BookshelfService
+  ) {}
 
   ngOnInit(): void {
-    this.allBooks = this.libraryService.getBooks();
+    this.bookResults = this.libraryService.getBooks();
+    this.libraryService.bookListChanged.subscribe((books: Book[]) => {
+      this.bookResults = books;
+      console.log("TEST", books)
+    });
   }
 
-  saveBook(book: Book) {
-    this.bookshelfService.saveBook(book);
+  onSaveBook(book: Book) {
+    return this.bookshelfService.saveBook(book);
   }
 }

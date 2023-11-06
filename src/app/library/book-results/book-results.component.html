@@ -1,6 +1,16 @@
-<div class="row">
-  <div class="col-md-6 mb-3" *ngFor="let book of allBooks | sortBooks: 'author' " >
-    <app-book [book]="book"></app-book>
-    <button (click)="saveBook(book)" class="float-right" style="border: none; font-size: 16px">&plus;</button>
+<div class="mb-3 row" *ngIf="bookResults.length > 0">
+  <div class="col-md-6" *ngFor="let bookEl of bookResults">
+    <app-book [book]="bookEl"></app-book>
+    <button
+      class="float-right"
+      style="border: none; font-size: 16px"
+      (click)="onSaveBook(bookEl)"
+    >
+      &plus;
+    </button>
   </div>
+</div>
+
+<div class="mb-3 row" *ngIf="bookResults.length < 1">
+  <p>No Books Available</p>
 </div>
