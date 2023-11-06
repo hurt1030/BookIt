@@ -59,6 +59,20 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "matt": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.matt.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -71,6 +85,9 @@
             },
             "development": {
               "browserTarget": "BookIt:build:development"
+            },
+            "matt": {
+              "browserTarget": "BookIt:build:matt"
             }
           },
           "defaultConfiguration": "development"
