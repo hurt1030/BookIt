@@ -18,15 +18,21 @@
     [ngClass]="{ collapse: collapsed }"
   >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/bookshelf" routerLinkActive="active">Bookshelf</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/library" routerLinkActive="active">Library</a>
+      </li>
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="/auth" routerLinkActive="active">Auth</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticated" (click)="onLogOut()">
+        <a class="nav-link" routerLink="/auth" routerLinkActive="active">Log Out</a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto" *ngIf="isAuthenticated">
       <li appDropdown class="nav-item dropdown show">
         <a
           class="nav-link dropdown-toggle"

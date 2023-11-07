@@ -19,7 +19,9 @@ import { BookFormTemplateComponent } from './bookshelf/book-form-template/book-f
 import { BookFormReactiveComponent } from './bookshelf/book-form-reactive/book-form-reactive.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SortBooksPipe } from './shared/pipes/sort-books.pipe';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './shared/auth/auth.component'
+import { AuthInterceptor } from './shared/auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http'
     BookshelfEditComponent,
     BookFormTemplateComponent,
     BookFormReactiveComponent,
-    SortBooksPipe
+    SortBooksPipe,
+    AuthComponent
   ],
   imports: [
     AppRoutingModule,
@@ -46,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
