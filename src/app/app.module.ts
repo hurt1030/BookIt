@@ -27,19 +27,9 @@ import { AuthInterceptor } from './shared/auth/auth.interceptor';
   declarations: [
     AppComponent,
     HeaderComponent,
-    BookshelfComponent,
-    BookListComponent,
-    BookDetailsComponent,
-    BookComponent,
-    BookResultsComponent,
-    BookSearchComponent,
-    LibraryComponent,
     DropdownDirective,
-    BookshelfHomeComponent,
-    BookshelfEditComponent,
     BookFormTemplateComponent,
     BookFormReactiveComponent,
-    SortBooksPipe,
     AuthComponent
   ],
   imports: [
