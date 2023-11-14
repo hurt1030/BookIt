@@ -22,17 +22,18 @@ import { SortBooksPipe } from './shared/pipes/sort-books.pipe';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './shared/auth/auth.component'
 import { AuthInterceptor } from './shared/auth/auth.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
     BookFormTemplateComponent,
     BookFormReactiveComponent,
     AuthComponent
   ],
   imports: [
+    SharedModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,

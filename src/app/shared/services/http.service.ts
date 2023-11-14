@@ -33,7 +33,7 @@ export class HttpService {
   fetchBooksFromFirebase() {
     this.http.get(FIREBASE_URL).subscribe((data: Book[]) => {
       console.log('DATA from FB: ', data);
-      this.bookshelfService.setBooks(data);
+      this.bookshelfService.setBooks(data ?? []);
     });
   }
 }
