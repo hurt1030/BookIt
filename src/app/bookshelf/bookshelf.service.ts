@@ -43,3 +43,4 @@ export class BookshelfService {
     this.bookListChanged.next(this.getBooks());
   }
 }
+
